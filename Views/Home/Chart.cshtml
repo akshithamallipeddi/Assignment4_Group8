@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "chart";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Crime Incidents from the Honolulu Police Department"
+	},
+
+	axisY: {
+		title: "Percentage of Crime types",
+		gridThickness: 0
+	},
+	data: [{
+		type: "pie",
+		indexLabel: "{label} {y}",
+		dataPoints: @Html.Raw(ViewBag.DataPoints)
+	}]
+});
+chart.render();
+
+}
+    </script>
+</head>
+<body>
+    <div id="chartContainer" style="height: 500px; width: 90%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html> 
