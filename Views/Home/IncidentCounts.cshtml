@@ -1,0 +1,32 @@
+﻿@using Assignment4_Group8.Models.ViewModel;
+@model List<CountbyType>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Count</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.type)
+                </td>
+                <td>
+                    @Html.ActionLink(item.count.ToString(), "Incidents" , new { id = item.type })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</table>

@@ -1,2 +1,58 @@
-﻿@{
-}
+﻿@model IEnumerable<RootData>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>objectid</th>
+            <th>kilonbr</th>
+            <th>blockaddress</th>
+            <th>cmid</th>
+            <th>cmagency</th>
+            <th>date</th>
+            <th>type</th>
+            <th>status</th>
+            <th>score</th>
+            <th>side</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.objectid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.kilonbr)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.blockaddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cmid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cmagency)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.side)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
